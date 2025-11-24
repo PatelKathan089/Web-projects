@@ -23,7 +23,7 @@ export const getVideos = async (req, res) => {
       );
     } catch (err) {
       console.log(`Failed to fetch comment for vidoId: ${videoId}`, err);
-      return [];
+      process.exit(1);
     }
   };
 
@@ -115,7 +115,7 @@ export const getVideos = async (req, res) => {
   // Sending video response from server:-
   try {
     let videoList = await videos.find({});
-    if (videoList.length === 0) {
+    if (videoList.length == 0) {
       const fetchVideos = await saveVideosToDatabase();
       for (let video of fetchVideos) {
         try {
@@ -136,7 +136,7 @@ export const getVideos = async (req, res) => {
   } catch (err) {
     return res
       .status(500)
-      .json({ message: "Server's Internal Error!", error: err });
+      .json({ message: "Server's Internal Error!", error: err.message });
   }
 };
 

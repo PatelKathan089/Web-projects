@@ -11,7 +11,7 @@ export const registerUsers = async (req, res) => {
     const hash_password = await bcrypt.hash(password, 10);
 
     const nameLogo =
-      `${name.split(" ")[0].slice(0, 1)}` + `${name.split(" ")[1].slice(0, 1)}`;
+      `${name.split(" ")[0].slice(0, 1)}`;
 
     // Create profilePicture object
     let profilePicture;

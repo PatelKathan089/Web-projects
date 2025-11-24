@@ -13,7 +13,7 @@ export const loginUser = async (req, res) => {
     if (email === regi_user.email && matched_password) {
       const token = jwt.sign(
         { uId: regi_user._id, userName: regi_user.userName },
-        process.env.SECRET_KEY,
+        process.env.AUTH_SECRET_KEY,
         {
           expiresIn: "1hr",
         }
@@ -29,6 +29,7 @@ export const loginUser = async (req, res) => {
       return res.status(404).json({ message: "User not found!" });
     }
   } catch (err) {
-    return res.status(500).json({ message: "Failed to Login", error: err });
+    console.log(err)
+    return res.status(500).json({ message: "Failed to Login", error: err.message });
   }
 };

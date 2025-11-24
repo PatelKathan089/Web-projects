@@ -1,5 +1,4 @@
 import channel from "../model/channel.model.js";
-import mongoose from "mongoose";
 
 export const createChannel = async (req, res) => {
   const { channelName, channelHandle, channelDescription } = req.body;
