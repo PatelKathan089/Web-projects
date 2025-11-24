@@ -23,7 +23,7 @@ function Register() {
 
     try {
       if (data.password === data.repeatPassword) {
-        let res = await fetch("http://localhost:3000/register", {
+        let res = await fetch("https://web-projects-nkbo.onrender.com/register", {
           method: "POST",
           body: formData,
         });

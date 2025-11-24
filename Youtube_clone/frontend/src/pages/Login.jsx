@@ -13,7 +13,7 @@ function Login() {
 
   const onSubmit = async (data) => {
     try {
-      let res = await fetch("http://localhost:3000/login", {
+      let res = await fetch("https://web-projects-nkbo.onrender.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

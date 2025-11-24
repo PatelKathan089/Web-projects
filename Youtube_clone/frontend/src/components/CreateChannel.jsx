@@ -20,7 +20,7 @@ function CreateChannel() {
     formData.append("userImg", userImg);
     if (termsAccepted) {
       try {
-        let res = await fetch("http://localhost:3000/create-channel", {
+        let res = await fetch("https://web-projects-nkbo.onrender.com/create-channel", {
           method: "POST",
           body: formData,
         });

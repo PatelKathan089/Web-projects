@@ -10,7 +10,7 @@ function Channel() {
 
   const fetchChannel = async () => {
     try {
-      const response = await fetch("http://localhost:3000/channel");
+      const response = await fetch("https://web-projects-nkbo.onrender.com/channel");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -31,7 +31,7 @@ function Channel() {
       const formData = new FormData();
       formData.append("banner-img", file);
       formData.append("channelHandle", channel.handle);
-      const res = await fetch("http://localhost:3000/channel", {
+      const res = await fetch("https://web-projects-nkbo.onrender.com/channel", {
         method: "POST",
         body: formData,
       });
@@ -58,7 +58,7 @@ function Channel() {
             className={
               channel.bannerImg ? "w-full h-full rounded-xl" : "hidden"
             }
-            src={`http://localhost:3000${channel.bannerImg}`}
+            src={`https://web-projects-nkbo.onrender.com${channel.bannerImg}`}
             alt="banner_image"
           />
           <div className={channel.bannerImg ? "hidden" : "relative"}>

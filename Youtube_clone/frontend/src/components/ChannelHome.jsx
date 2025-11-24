@@ -9,7 +9,7 @@ function ChannelHome() {
 
   const fetchChannel = async () => {
     try {
-      const response = await fetch("http://localhost:3000/channel");
+      const response = await fetch("https://web-projects-nkbo.onrender.com/channel");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -28,7 +28,7 @@ function ChannelHome() {
 
   const handleDeleteVideo = async (videoId, channelId) => {
     try {
-      let res = await fetch("http://localhost:3000/channel", {
+      let res = await fetch("https://web-projects-nkbo.onrender.com/channel", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ videoId, channelId }),
@@ -63,7 +63,7 @@ function ChannelHome() {
                 <div className="w-full">
                   <img
                     className="w-full rounded-lg"
-                    src={`http://localhost:3000${video.thumbnail}`}
+                    src={`https://web-projects-nkbo.onrender.com${video.thumbnail}`}
                     alt="video-thumbnail"
                   />
                 </div>

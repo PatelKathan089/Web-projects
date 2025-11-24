@@ -9,7 +9,7 @@ function Content() {
 
   useEffect(() => {
     async function getData() {
-      let res = await fetch("http://localhost:3000/videos");
+      let res = await fetch("https://web-projects-nkbo.onrender.com/videos");
       let info = await res.json();
       if (info) {
         setVideos(info.data);

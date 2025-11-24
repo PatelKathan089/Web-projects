@@ -42,7 +42,7 @@ function Player() {
     if (!myComment) {
       toast.error("Please Enter your comment!");
     }
-    const res = await fetch("http://localhost:3000/videos", {
+    const res = await fetch("https://web-projects-nkbo.onrender.com/videos", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(myComment),
@@ -65,7 +65,7 @@ function Player() {
   };
 
   const handleEditComment = async (author, videoId, editedComment) => {
-    const res = await fetch("http://localhost:3000/videos", {
+    const res = await fetch("https://web-projects-nkbo.onrender.com/videos", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ author, videoId, editedComment }),
@@ -87,7 +87,7 @@ function Player() {
   };
 
   const handleDeleteComment = async (author, videoId) => {
-    const res = await fetch("http://localhost:3000/videos", {
+    const res = await fetch("https://web-projects-nkbo.onrender.com/videos", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ author, videoId }),

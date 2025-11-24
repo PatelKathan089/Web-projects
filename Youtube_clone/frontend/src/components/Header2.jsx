@@ -18,7 +18,7 @@ function Header2({ display, toggleDisplay }) {
   };
 
   const getData = async () => {
-    const res = await fetch("http://localhost:3000/channel");
+    const res = await fetch("https://web-projects-nkbo.onrender.com/channel");
     const channel = await res.json();
     channel.data.length > 0 ? setShowChannel(true) : setShowChannel(false);
   };
@@ -40,7 +40,7 @@ function Header2({ display, toggleDisplay }) {
       toast.info("Please type the video title!");
       return;
     }
-    const res = await fetch("http://localhost:3000/videos");
+    const res = await fetch("https://web-projects-nkbo.onrender.com/videos");
     const data = await res.json();
     const videos = data.data;
     const filteredVideos = videos.filter((video) => {

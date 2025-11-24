@@ -27,7 +27,7 @@ function ChannelPlayer() {
             <video className="w-full h-full rounded" controls>
               <source
                 type="video/mp4"
-                src={`http://localhost:3000${videoInfo.player}`}
+                src={`https://web-projects-nkbo.onrender.com${videoInfo.player}`}
               ></source>
             </video>
           </div>

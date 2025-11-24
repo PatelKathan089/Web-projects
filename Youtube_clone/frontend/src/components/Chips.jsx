@@ -10,7 +10,7 @@ function Chips() {
 
   useEffect(() => {
     const getVideos = async () => {
-      const res = await fetch("http://localhost:3000/videos");
+      const res = await fetch("https://web-projects-nkbo.onrender.com/videos");
       const videos = await res.json();
       videos.data?.map((item) => {
         if (item.tags && item.tags.length > 10) {

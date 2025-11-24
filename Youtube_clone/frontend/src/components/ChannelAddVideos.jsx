@@ -14,7 +14,7 @@ function ChannelAddVideos() {
 
   const fetchChannel = async () => {
     try {
-      const response = await fetch("http://localhost:3000/channel");
+      const response = await fetch("https://web-projects-nkbo.onrender.com/channel");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -40,7 +40,7 @@ function ChannelAddVideos() {
     formData.append("title", title);
 
     try {
-      const res = await fetch("http://localhost:3000/channel", {
+      const res = await fetch("https://web-projects-nkbo.onrender.com/channel", {
         method: "POST",
         body: formData,
       });
