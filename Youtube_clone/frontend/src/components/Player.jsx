@@ -28,14 +28,13 @@ function Player() {
 
   const location = useLocation();
   const videoInfo = location.state;
+  console.log(videoInfo);
   const src = videoInfo.player.embedHtml.split(" ")[3].slice(7, -1);
   const currentUser = `@${localStorage.getItem("userName")}`;
 
   useEffect(() => {
     setComments(videoInfo.comments);
   }, []);
-
-  console.log(comments);
 
   // Crud operations for comments:-
   const handleComment = async () => {
@@ -48,7 +47,6 @@ function Player() {
       body: JSON.stringify(myComment),
     });
     const data = await res.json();
-    console.log(data.comment);
 
     if (res.ok) {
       setComments([...comments, data.comment]);
@@ -113,7 +111,7 @@ function Player() {
             <div className="aspect-video">
               <iframe
                 className="w-full h-full rounded-lg"
-                src={`http://${src}`}
+                src={`https://${src}`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
